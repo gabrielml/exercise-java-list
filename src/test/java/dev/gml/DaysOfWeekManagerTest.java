@@ -52,4 +52,20 @@ public class DaysOfWeekManagerTest {
         // should be 7.
         assertEquals(7, daysOfWeekManager.getListLength());
     }
+
+    @Test
+    @DisplayName("3️⃣ It should confirm that a day can be deleted from the list.")
+    void deleteDayShouldRemoveTheDayFromTheList() {
+        // --- Given ---
+        // The DaysOfWeekManager that is initialized before each test,
+
+        // --- When ---
+        // I call the 'createDaysOfWeekList' method & delete a day by name with 'deleteDay()' method.
+        daysOfWeekManager.createDaysOfWeekList(); // TODO: Once all test are created, this line must be refactored (@BeforeEach)
+        daysOfWeekManager.deleteDay("Monday");
+
+        // --- Then ---
+        // I assert that the length of the list of days of the week has decreased by one day.
+        assertEquals(6, daysOfWeekManager.getListLength());
+    }
 }
