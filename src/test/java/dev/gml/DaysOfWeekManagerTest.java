@@ -5,6 +5,9 @@
 
 package dev.gml;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -54,7 +57,7 @@ public class DaysOfWeekManagerTest {
     }
 
     @Test
-    @DisplayName("3️⃣ It should confirm that a day can be deleted from the list.")
+    @DisplayName("3️⃣ It should confirm that 'a specific day' can be deleted from the list.")
     void deleteDayShouldRemoveTheDayFromTheList() {
         // --- Given ---
         // The DaysOfWeekManager that is initialized before each test,
@@ -67,5 +70,8 @@ public class DaysOfWeekManagerTest {
         // --- Then ---
         // I assert that the length of the list of days of the week has decreased by one day.
         assertEquals(6, daysOfWeekManager.getListLength());
+
+        // And I also assert that the list of days of the week doesn't contain the deleted day.
+        assertThat(daysOfWeekManager.getDaysOfWeek(), not(hasItem("Monday")));
     }
 }
