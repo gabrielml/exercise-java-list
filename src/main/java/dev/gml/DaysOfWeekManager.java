@@ -37,7 +37,7 @@ public class DaysOfWeekManager {
      * the internal list of our object.
      * </p>
      * 
-     * @return An unmodifiable {@List List} of Strings containing the days of the
+     * @return A copy {@List List} of Strings containing the days of the
      *         week.
      */
     public List<String> getDaysOfWeek() {
