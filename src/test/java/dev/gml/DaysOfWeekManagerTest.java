@@ -5,6 +5,7 @@
 
 package dev.gml;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -36,4 +37,19 @@ public class DaysOfWeekManagerTest {
         assertNotNull(daysOfWeekManager.getDaysOfWeek());
     }
 
+    @Test
+    @DisplayName("2️⃣ It should check the correct length of the list.")
+    void getListLengthShouldReturnCorrectSize() {
+        // --- Given ---
+        // The DaysOfWeekManager that is initialized before each test,
+
+        // --- When ---
+        // I call the 'createDaysOfWeekList' method,
+        daysOfWeekManager.createDaysOfWeekList();
+
+        // --- Then ---
+        // I assert that the length of the list of days of the week is correct, it
+        // should be 7.
+        assertEquals(7, daysOfWeekManager.getListLength());
+    }
 }
