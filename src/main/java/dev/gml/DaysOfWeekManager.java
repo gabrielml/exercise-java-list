@@ -43,4 +43,14 @@ public class DaysOfWeekManager {
     public List<String> getDaysOfWeek() {
         return new ArrayList<>(daysOfWeek); // Return a copy to prevent external modification.
     }
+
+    /**
+     * Return the number of days in the list.
+     * 
+     * @return the length of the list of days of the week.
+     */
+    public int getListLength() {
+        return daysOfWeek.size();
+    }
+
 }
