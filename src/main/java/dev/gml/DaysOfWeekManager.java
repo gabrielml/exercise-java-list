@@ -53,4 +53,15 @@ public class DaysOfWeekManager {
         return daysOfWeek.size();
     }
 
+    /**
+     * Deletes a specified day from the list of days of the week.
+     * 
+     * @param dayToDelete The name of the day to be removed.
+     */
+    public void deleteDay(String dayToDelete) {
+        if (daysOfWeek != null) {
+            daysOfWeek.remove(dayToDelete);
+        }
+    }
+
 }
