@@ -6,6 +6,7 @@
 package dev.gml;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
@@ -163,4 +164,24 @@ public class DaysOfWeekManagerTest {
         // I confirm that the list is sorted alphabetically.
         assertThat(daysOfWeekManager.getDaysOfWeek(), is(equalTo(expectedAlphabeticallySortedList)));
     }
+
+    @Test
+    @DisplayName("7️⃣ It should successfully clears the list of days.")
+    void emptyListShouldClearTheListOfDays() {
+        // --- Given ---
+        // The instance of DayOfWeekManager that is initialized before each test,
+        // the list of days of the week,
+        // I check that the list has been initialized with the days.
+        daysOfWeekManager.createDaysOfWeekList();
+        assertThat(daysOfWeekManager.getDaysOfWeek(), is(not(empty())));
+
+        // --- When ----
+        // The "emptyList" method is called.
+        daysOfWeekManager.emptyList();
+
+        // --- Then ----
+        // The list should be empty.
+        assertThat(daysOfWeekManager.getDaysOfWeek(), is(empty()));
+    }
+
 }
