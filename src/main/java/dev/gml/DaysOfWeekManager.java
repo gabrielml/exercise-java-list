@@ -107,4 +107,8 @@ public class DaysOfWeekManager {
         }
     }
 
+    public void emptyList() {
+        daysOfWeek.clear();
+    }
+
 }
