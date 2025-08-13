@@ -64,4 +64,17 @@ public class DaysOfWeekManager {
         }
     }
 
+    /**
+     * Returns the day of the week at the specified index.
+     * 
+     * @param index The index of the day (It should be between 0 and 6).
+     * @return The selected day in written format (String).
+     */
+    public String getDay(int index) {
+        
+        String selectedDay = daysOfWeek.get(index);
+
+        return selectedDay;
+    }
+
 }
