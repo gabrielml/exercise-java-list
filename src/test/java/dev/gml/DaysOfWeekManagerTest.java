@@ -97,4 +97,42 @@ public class DaysOfWeekManagerTest {
         // I can compare both names of the day of the week and say that they match.
         assertThat(actualDay, is(equalTo(expectedDay)));
     }
+
+    @Test
+    @DisplayName("5️⃣🅰️ It should return 'True' if day exists in the list.")
+    void dayExistsShouldReturnTrueForExistingDay() {
+        // --- Given ---
+        // The instance of DaysOfWeekManager that is initialized before each test,
+        // The list of days of the week,
+        // A existing day.
+        daysOfWeekManager.createDaysOfWeekList();
+        String existingDay = "Wednesday";
+
+        // --- When ---
+        // I have verified that the day is on the list.
+        boolean dayExists = daysOfWeekManager.dayExists(existingDay);
+        
+        // --- Then ---
+        // I can confirm that the day does exist on the list.
+        assertThat(dayExists, is(true));
+    }
+
+    @Test
+    @DisplayName("5️⃣🅱️ It should return 'False' if day doesn't exists in the list.")
+    void dayExistsShouldReturnFalseForNonExistingDay(){
+        // --- Given ---
+        // The instance of DayOfWeekManager that is initialized before each test,
+        // The list of days of the week,
+        // An invented day name.
+        daysOfWeekManager.createDaysOfWeekList();
+        String nonExistingDay = "FUNday";
+
+        // --- When ---
+        // I have verified that the 'funny day' is not on the list :(
+        boolean dayExists = daysOfWeekManager.dayExists(nonExistingDay);
+
+        // --- Then ---
+        // I can sadly confirm that the day does not exist on this list.
+        assertThat(dayExists, is(false));
+    }
 }
