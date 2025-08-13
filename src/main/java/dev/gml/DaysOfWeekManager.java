@@ -6,6 +6,7 @@ package dev.gml;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -94,6 +95,10 @@ public class DaysOfWeekManager {
         }
 
         return false;
+    }
+
+    public void sortDaysAlphabetically() {
+        Collections.sort(daysOfWeek);
     }
 
 }
