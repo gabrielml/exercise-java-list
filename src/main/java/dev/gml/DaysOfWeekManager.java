@@ -82,4 +82,12 @@ public class DaysOfWeekManager {
         return null;
     }
 
+    public boolean dayExists(String dayName) {
+        if (daysOfWeek.contains(dayName)) {
+            return true;
+        }
+
+        return false;
+    }
+
 }
