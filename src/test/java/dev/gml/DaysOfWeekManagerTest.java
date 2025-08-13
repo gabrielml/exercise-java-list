@@ -13,6 +13,10 @@ import static org.hamcrest.Matchers.not;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -65,21 +69,25 @@ public class DaysOfWeekManagerTest {
         // The DaysOfWeekManager that is initialized before each test,
 
         // --- When ---
-        // I call the 'createDaysOfWeekList' method & delete a day by name with 'deleteDay()' method.
-        daysOfWeekManager.createDaysOfWeekList(); // TODO: Once all test are created, this line must be refactored (@BeforeEach)
+        // I call the 'createDaysOfWeekList' method & delete a day by name with
+        // 'deleteDay()' method.
+        daysOfWeekManager.createDaysOfWeekList(); // TODO: Once all test are created, this line must be refactored
+                                                  // (@BeforeEach)
         daysOfWeekManager.deleteDay("Monday");
 
         // --- Then ---
-        // I assert that the length of the list of days of the week has decreased by one day.
+        // I assert that the length of the list of days of the week has decreased by one
+        // day.
         assertEquals(6, daysOfWeekManager.getListLength());
 
-        // And I also assert that the list of days of the week doesn't contain the deleted day.
+        // And I also assert that the list of days of the week doesn't contain the
+        // deleted day.
         assertThat(daysOfWeekManager.getDaysOfWeek(), not(hasItem("Monday")));
     }
 
     @Test
     @DisplayName("4️⃣ It should return the correct day based on its index in the list.")
-    void getDayShouldReturnCorrectDayForGivenIndex(){
+    void getDayShouldReturnCorrectDayForGivenIndex() {
         // --- Given ---
         // The instance of DaysOfWeekManager that is initialized before each test,
         // The index of the day I want to retrieve.
@@ -111,7 +119,7 @@ public class DaysOfWeekManagerTest {
         // --- When ---
         // I have verified that the day is on the list.
         boolean dayExists = daysOfWeekManager.dayExists(existingDay);
-        
+
         // --- Then ---
         // I can confirm that the day does exist on the list.
         assertThat(dayExists, is(true));
@@ -119,7 +127,7 @@ public class DaysOfWeekManagerTest {
 
     @Test
     @DisplayName("5️⃣🅱️ It should return 'False' if day doesn't exists in the list.")
-    void dayExistsShouldReturnFalseForNonExistingDay(){
+    void dayExistsShouldReturnFalseForNonExistingDay() {
         // --- Given ---
         // The instance of DayOfWeekManager that is initialized before each test,
         // The list of days of the week,
@@ -134,5 +142,25 @@ public class DaysOfWeekManagerTest {
         // --- Then ---
         // I can sadly confirm that the day does not exist on this list.
         assertThat(dayExists, is(false));
+    }
+
+    @Test
+    @DisplayName("6️⃣ It should sort the days of the list alphabetically.")
+    void sortDaysAlphabeticallyShouldSortTheListInAscendingOrder() {
+        // --- Given ---
+        // The instance of DayOfWeekManager that is initialized before each test,
+        // The list of days of the week,
+        // an alphabetically ordered list of the days of the week.
+        daysOfWeekManager.createDaysOfWeekList();
+        List<String> expectedAlphabeticallySortedList = Arrays.asList(
+                "Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday");
+
+        // --- When ---
+        // I call the corresponding method, it sorts the list of days alphabetically.
+        daysOfWeekManager.sortDaysAlphabetically();
+
+        // --- Then ---
+        // I confirm that the list is sorted alphabetically.
+        assertThat(daysOfWeekManager.getDaysOfWeek(), is(equalTo(expectedAlphabeticallySortedList)));
     }
 }
