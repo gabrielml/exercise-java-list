@@ -82,9 +82,15 @@ public class DaysOfWeekManager {
         return null;
     }
 
+    /**
+     * Checks if the requested day exists in the list.
+     * 
+     * @param dayName The name of the day to check.
+     * @return "true" if the day exists in the list, "false" otherwise.
+     */
     public boolean dayExists(String dayName) {
-        if (daysOfWeek.contains(dayName)) {
-            return true;
+        if (daysOfWeek != null) {
+            return daysOfWeek.contains(dayName);
         }
 
         return false;
