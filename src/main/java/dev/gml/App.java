@@ -22,10 +22,9 @@ public final class App {
      */
     public static void main(String[] args) {
 
-        DaysOfWeekManager daysOfWeekManager = new DaysOfWeekManager();
-
-        daysOfWeekManager.createDaysOfWeekList();
-
-        System.out.println(daysOfWeekManager.getDaysOfWeek());
+        System.out.println(
+                "The objective of this exercise is to practice integrating basic Java concepts with modern software development practices.");
+        System.out.println("You can run the tests in your preferred IDE and observe their behavior.");
+        System.out.println("This application's 'App.java' file is for informational purposes only.");
     }
 }
