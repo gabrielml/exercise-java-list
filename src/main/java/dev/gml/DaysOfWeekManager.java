@@ -97,8 +97,14 @@ public class DaysOfWeekManager {
         return false;
     }
 
+    /**
+     * Sorts the list of days of the week in alphabetical order (in ascending
+     * order).
+     */
     public void sortDaysAlphabetically() {
-        Collections.sort(daysOfWeek);
+        if (daysOfWeek != null) {
+            Collections.sort(daysOfWeek);
+        }
     }
 
 }
