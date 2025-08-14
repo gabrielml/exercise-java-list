@@ -14,11 +14,11 @@ and modern software development methodologies like Test-Driven Development
 *   **JUnit 5**: The testing framework used for writing and running unit tests.
 *   **Hamcrest**: A library of matcher objects that can be combined to create flexible and readable assertions in tests.
 *   **Git & GitHub**: Version control system and hosting platform used to manage the exercise's codebase.
-*   **Visual Studio Code & IntelliJ IDEA**: The integrated development environment (IDE) used for development.
+*   **Visual Studio Code and IntelliJ IDEA**: These are the integrated development environments (IDEs) used for development.
 
 ✨ Features and Requirements
 ---------------------------
-The DaysOfWeekManager class was developed to meet the following requirements:
+The ```DaysOfWeekManager``` class was developed to meet the following requirements:
 All methods are unit tested using JUnit 5 and Hamcrest, with the List collection
 from java.util being used as required.
 
@@ -37,11 +37,11 @@ This cycle ensures that the code is robust and reliable, as every piece of logic
 
 ### Defensive Programming
 *   **NullPointerException Checks**: The code includes checks to ensure that
-the daysOfWeek list is not null before performing operations on it
+the ```daysOfWeek``` list is not null before performing operations on it
 (e.g., ```if (daysOfWeek != null)```). This practice prevents the application from
 crashing due to ```NullPointerException``` errors.
 
-* **Defensive Copy**: The ```getDaysOfWeek()``` method returns a new ArrayList
+* **Defensive Copy**: The ```getDaysOfWeek()``` method returns a new ```ArrayList```
 containing the elements of the internal list, rather than returning
 the internal list itself. This prevents external code from modifying the state
 of the ```DaysOfWeekManager``` object without using its public methods,
@@ -56,8 +56,7 @@ classes is crucial. Key methods used in this exercise include:
 *   ```List.clear()```: A method to remove all elements from a list.
 
 ### 📁 Class Diagram
-
-This diagram illustrates the relationship between the main classes in the project.
+This diagram illustrates the relationship between the main classes in the exercise.
 ```mermaid
 classDiagram
     DaysOfWeekManager --o DaysOfWeekManagerTest : tests >
@@ -90,6 +89,8 @@ classDiagram
 
 ✅ TDD Coverage
 ---------------
+This section contains a screenshot of the test coverage report,
+demonstrating that every method has been thoroughly tested.
 ![TDD Screenshot](/img/tdd.png)
 
 ## ℹ️ About
