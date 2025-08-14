@@ -90,7 +90,8 @@ classDiagram
 ✅ TDD Coverage
 ---------------
 This section contains a screenshot of the test coverage report,
-demonstrating that every method has been thoroughly tested.
+demonstrating that every method has been thoroughly tested.&nbsp;
+
 ![TDD Screenshot](/img/tdd.png)
 
 ## ℹ️ About
