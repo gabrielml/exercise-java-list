@@ -55,7 +55,8 @@ classes is crucial. Key methods used in this exercise include:
 *   ```Collections.sort()```: A utility method to sort a list alphabetically or numerically.
 *   ```List.clear()```: A method to remove all elements from a list.
 
-### 📁 Class Diagram
+📁 Class Diagram
+----------------
 This diagram illustrates the relationship between the main classes in the exercise.
 ```mermaid
 classDiagram
